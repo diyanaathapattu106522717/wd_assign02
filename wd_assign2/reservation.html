@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />	
+<meta name="description" content="Web development" />
+<meta name="keywords" content="Assignment 2" />
+<meta name="author" content="Diyana" />
+
+	<!-- link to css -->
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+	<!-- link to js -->
+<script src="js/reservation.js"></script>
+
+<title>DineEasy</title>
+</head>
+
+<body>
+<header>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="restaurants.html">Restaurants</a></li>
+<li><a href="recommend.html">Recommendations</a></li>
+<li><a href="register.html" >Register</a></li>
+<li><a href="reservation.html" class="active">Reservations</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+    <section class="hero">
+        <h1>Book a Table</h1>
+        <p>Choose a restaurant, pick a date and time, and secure your booking with a deposit.</p>
+    </section>
+
+    <section class="reservation-form">
+        <h2>Reservation</h2>
+
+        <form id="reservationForm" method="post" action="http://mercury.swin.edu.au/it000000/cos10005/regtest.php">
+
+            <!-- Full name -->
+            <div class="textinput">
+                <label for="fullName">Full name:</label>
+                <input type="text" id="fullName" name="fullName" />
+            </div>
+
+            <!-- Email -->
+            <div class="textinput">
+                <label for="email">Email address:</label>
+                <input type="email" id="email" name="email" />
+            </div>
+
+            <!-- Phone -->
+            <div class="textinput">
+                <label for="phone">Phone number:</label>
+                <input type="text" id="phone" name="phone" placeholder="Digits only" />
+            </div>
+
+            <!-- Restaurant selection (data-deposit holds deposit amount in AUD) -->
+            <div class="textinput">
+                <label for="restaurant">Restaurant:</label>
+                <select id="restaurant" name="restaurant">
+                    <option value="">Select</option>
+                    <option value="dragon-wok" data-deposit="20">Dragon Wok (Deposit $20)</option>
+                    <option value="golden-saffron-house" data-deposit="15">Golden Saffron House (Deposit $15)</option>
+                    <option value="marinara-co" data-deposit="25">Marinara & Co. (Deposit $25)</option>
+                    <option value="k-grill" data-deposit="30">K‑Grill (Deposit $30)</option>
+                    <option value="luna-lucha-cantina" data-deposit="10">Luna Lucha Cantina (Deposit $10)</option>
+                    <option value="nile-stone" data-deposit="20">Nile &a Stone (Deposit $20)</option>
+                </select>
+            </div>
+
+            <!-- Reservation date and time -->
+            <div class="textinput">
+                <label for="resDateTime">Reservation date & time:</label>   
+
+                <input type="datetime-local" id="resDateTime" name="resDateTime" />   <!--creates date calender-->
+            </div>
+
+            <!-- Number of people -->
+            <div class="textinput">
+                <label for="people">Number of people:</label>
+                <input type="number" id="people" name="people" min="1" value="1" />
+            </div>
+
+            <!-- Special requests -->
+            <div class="textinput">
+                <label for="requests">Special requests:</label>
+                <input type="text" id="requests" name="requests" />
+            </div>
+
+            <!-- Deposit amount (read-only, updated dynamically) -->
+            <div class="textinput">
+                <label for="deposit">Deposit amount (AUD):</label>
+                <input type="text" id="deposit" name="deposit" readonly value="$0.00" />
+            </div>
+
+            <!-- Deposit method -->
+            <div class="radioinput">
+                <span class="radioLabel">Deposit method:</span>
+
+                <input type="radio" id="methodVoucher" name="depositMethod" value="voucher" />
+                <label for="methodVoucher">Voucher</label>
+
+                <input type="radio" id="methodOnline" name="depositMethod" value="online" />
+                <label for="methodOnline">Online payment</label>
+            </div>
+
+            <!-- Voucher code (shown only when Voucher selected) -->
+            <div class="textinput" id="voucherRow" style="display:none;">
+                <label for="voucherCode">Voucher code:</label>
+                <input type="text" id="voucherCode" name="voucherCode" placeholder="12-digit code (optional)" />
+            </div>
+
+            <!-- Online payment fields (shown only when Online selected) -->
+            <div id="onlinePaymentFields" style="display:none;">
+                <div class="textinput">
+                    <label for="cardType">Card type:</label>
+                    <select id="cardType" name="cardType">
+                        <option value="">Select</option>
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">MasterCard</option>
+                        <option value="amex">Amex</option>
+                    </select>
+                </div>
+
+                <div class="textinput">
+                    <label for="cardNumber">Card number:</label>
+                    <input type="text" id="cardNumber" name="cardNumber" placeholder="Digits only" />
+                </div>
+            </div>
+
+            <!-- Billing email with same-as-email option -->
+            <div class="textinput">
+                <label for="billingEmail">Billing email:</label>
+                <input type="email" id="billingEmail" name="billingEmail" />
+            </div>
+
+            <div class="textinput">
+                <label for="sameAsEmail">Same as email:</label>
+                <input type="checkbox" id="sameAsEmail" />
+            </div>
+
+            <!-- Submit -->
+            <div class="buttoninput">
+                <input type="submit" value="Confirm Reservation" />
+            </div>
+
+        </form>
+    </section>
+</main>
+
+<footer>
+<p>DineEasy</p>
+</footer>
+</body>
+</html>

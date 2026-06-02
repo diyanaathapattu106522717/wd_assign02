@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />	
+<meta name="description" content="Web development" />
+<meta name="keywords" content="Assignment 2" />
+<meta name="author" content="Diyana" />
+
+	<!-- link to css -->
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+	<!-- (2) -->
+
+	<!-- link to js -->
+<script src="js/register.js"></script>
+
+<title>DineEasy</title>
+</head>
+
+<body>
+<header>
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="restaurants.html">Restaurants</a></li>
+<li><a href="recommend.html">Recommendations</a></li>
+<li><a href="register.html"  class="active">Register</a></li>
+<li><a href="reservation.html">Reservations</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+    <h1>Create an Account</h1>
+    <p>Register to save your preferences and make reservations faster.</p>
+</section>
+
+<section class="register-form">
+    <h2>Registration Form:</h2>
+
+    <form id="regForm">
+
+        <!-- username -->
+        <div class="textinput">
+            <label for="username">Username:</label>
+            <input type="text" id="username" />
+        </div>
+
+        <!-- email -->
+        <div class="textinput">
+            <label for="email">Email Address:</label>
+            <input type="text" id="email" />
+        </div>
+
+        <!-- phone -->
+        <div class="textinput">
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" />
+        </div>
+
+        <!-- password -->
+        <div class="textinput">
+            <label for="password">Password:</label>
+            <input type="password" id="password" />
+        </div>
+
+        <!-- confirm password -->
+        <div class="textinput">
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" />
+        </div>
+
+        <!-- gender -->
+        <div class="radioinput">
+            <span class="radioLabel">Gender:</span>
+
+            <input type="radio" id="genderM" name="gender" value="M" />
+            <label for="genderM">Male</label>
+
+            <input type="radio" id="genderF" name="gender" value="F" />
+            <label for="genderF">Female</label>
+        </div>
+
+        <!-- dietary preferences -->
+        <div class="textinput">
+            <label for="diet">Dietary Preference:</label>
+            <select id="diet">
+                <option value="none">Select</option>
+                <option value="noneDiet">None</option>
+                <option value="vegan">Vegan</option>
+                <option value="halal">Halal</option>
+                <option value="vegetarian">Vegetarian</option>
+            </select>
+        </div>
+
+        <!-- country -->
+        <div class="textinput">
+            <label for="country">Country/Region:</label>
+            <select id="country">
+                <option value="none">Select</option>
+                <option value="australia">Australia</option>
+                <option value="malaysia">Malaysia</option>
+                <option value="singapore">Singapore</option>
+                <option value="india">India</option>
+            </select>
+        </div>
+
+        <!-- submit button -->
+        <div class="buttoninput">
+            <input type="submit" value="Register" />
+        </div>
+
+    </form>
+</section>
+
+<footer>
+<p>2026 DineEasy</p>
+</footer>
+</body>
+</html>
